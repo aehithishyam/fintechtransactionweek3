@@ -3,7 +3,7 @@ interface NotificationProps {
   type: 'success' | 'error' | 'info';
   onClose: () => void;
 }
-
+ 
 function Notification({ message, type, onClose }: NotificationProps) {
   return (
     <div className={`notification ${type}`}>
@@ -19,3 +19,4 @@ function Notification({ message, type, onClose }: NotificationProps) {
 }
 
 export default Notification;
+

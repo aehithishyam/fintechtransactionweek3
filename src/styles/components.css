@@ -10,7 +10,7 @@
   transition: all var(--transition-fast);
   white-space: nowrap;
   border: none;
-  cursor: pointer;
+  cursor: pointer; 
 }
 
 .btn:disabled {
@@ -267,3 +267,4 @@
     max-width: none;
   }
 }
+

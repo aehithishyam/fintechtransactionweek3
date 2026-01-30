@@ -7,7 +7,7 @@ interface UseOptimisticUpdateResult<T> {
   isOptimistic: boolean;
   isPending: boolean;
   error: string | null;
-  applyOptimistic: (
+  applyOptimistic: ( 
     original: T,
     optimistic: T,
     serverAction: () => Promise<T>
@@ -117,3 +117,4 @@ export function useOptimisticUpdate<T extends { id: string }>(): UseOptimisticUp
     confirm,
   };
 }
+

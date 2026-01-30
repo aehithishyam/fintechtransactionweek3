@@ -10,7 +10,7 @@ import { CONFIG } from '../constants';
 
 interface UseTransactionsResult {
   transactions: Transaction[];
-  pagination: {
+  pagination: { 
     page: number;
     pageSize: number;
     total: number;
@@ -130,3 +130,4 @@ export function useTransactions(): UseTransactionsResult {
     getTransactionById,
   };
 }
+

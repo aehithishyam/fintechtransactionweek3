@@ -2,7 +2,7 @@ interface HeaderProps {
   title: string;
   onMenuClick: () => void;
 }
-
+ 
 function Header({ title }: HeaderProps) {
   return (
     <header className="header">
@@ -18,3 +18,4 @@ function Header({ title }: HeaderProps) {
 }
 
 export default Header;
+

@@ -1,4 +1,4 @@
-export function formatRelativeTime(timestamp: number): string {
+ export function formatRelativeTime(timestamp: number): string {
   const now = Date.now();
   const diff = now - timestamp;
   
@@ -43,3 +43,4 @@ export function truncate(text: string, maxLength: number): string {
   if (text.length <= maxLength) return text;
   return `${text.slice(0, maxLength - 3)}...`;
 }
+

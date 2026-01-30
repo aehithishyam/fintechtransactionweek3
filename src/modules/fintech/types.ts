@@ -7,7 +7,7 @@ export interface User {
   role: UserRole;
   department: string;
 }
-
+ 
 export type TransactionStatus = 'completed' | 'pending' | 'failed' | 'refunded' | 'disputed';
 export type TransactionType = 'payment' | 'refund' | 'transfer' | 'withdrawal' | 'deposit';
 
@@ -199,3 +199,4 @@ export interface LoadingState {
   error: string | null;
   retryCount: number;
 }
+

@@ -1,7 +1,7 @@
 export function maskCardNumber(cardLast4: string): string {
   return `•••• •••• •••• ${cardLast4}`;
 }
-
+ 
 export function maskAccountNumber(accountNumber: string): string {
   if (accountNumber.startsWith('****')) {
     return accountNumber;
@@ -50,3 +50,4 @@ export function formatAmount(amount: number, currency: string = 'USD'): string {
     currency,
   }).format(amount);
 }
+

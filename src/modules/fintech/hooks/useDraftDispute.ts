@@ -5,7 +5,7 @@ import { useAuth } from '../context';
 import type { DraftStatus } from '../types';
 
 // type DraftStatus = 'idle' | 'saving' | 'saved' | 'error';
-
+ 
 interface UseDraftDisputeResult {
   drafts: DisputeDraft[];
   currentDraft: DisputeDraft | null;
@@ -165,3 +165,4 @@ export function useDraftDispute(): UseDraftDisputeResult {
     getDraftByTransactionId,
   };
 }
+

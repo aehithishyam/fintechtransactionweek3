@@ -7,7 +7,8 @@ export { TransactionTable } from './TransactionTable';
 export { Pagination } from './Pagination';
 export { DisputeWizard } from './DisputeWizard';
 export { DisputeList } from './DisputeList';
-export { DisputeDetail } from './DisputeDetail';
+export { DisputeDetail } from './DisputeDetail'; 
 export { ConflictModal } from './ConflictModal';
 export { AuditLogPanel } from './AuditLogPanel';
 export { RealtimeIndicator } from './RealtimeIndicator';
+

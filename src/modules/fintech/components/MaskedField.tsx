@@ -9,7 +9,7 @@ interface MaskedFieldProps {
   currency?: string;
   className?: string;
 }
-
+ 
 export function MaskedField({ value, type, currency = 'USD', className = '' }: MaskedFieldProps) {
   const { hasPermission } = useAuth();
   const canViewFull = hasPermission('view_full_data');
@@ -57,3 +57,4 @@ export function MaskedField({ value, type, currency = 'USD', className = '' }: M
 }
 
 export default MaskedField;
+

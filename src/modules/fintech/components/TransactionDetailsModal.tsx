@@ -1,4 +1,4 @@
-import type { Transaction } from '../types';
+ import type { Transaction } from '../types';
 
 interface Props {
   transaction: Transaction;
@@ -67,3 +67,4 @@ function Detail({
     </div>
   );
 }
+

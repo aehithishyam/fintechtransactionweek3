@@ -10,7 +10,7 @@ interface DisputeListProps {
   statusFilter: DisputeStatus | 'all';
   onStatusFilterChange: (status: DisputeStatus | 'all') => void;
   onSelect: (dispute: Dispute) => void;
-  isLoading: boolean;
+  isLoading: boolean; 
 }
 
 const STATUS_OPTIONS: (DisputeStatus | 'all')[] = [
@@ -122,3 +122,4 @@ function DisputeCard({ dispute, isSelected, onSelect }: DisputeCardProps) {
 }
 
 export default DisputeList;
+

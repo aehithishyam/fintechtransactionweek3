@@ -6,7 +6,7 @@ export function RoleSelector() {
   const { currentUser, switchRole } = useAuth();
 
   return (
-    <div className="role-selector">
+    <div className="role-selector"> 
       <label className="role-selector-label">
         Current Role:
       </label>
@@ -30,3 +30,4 @@ export function RoleSelector() {
 }
 
 export default RoleSelector;
+

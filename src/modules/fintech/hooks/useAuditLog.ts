@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import type { AuditLogEntry, AuditAction } from '../types';
 import { auditService } from '../services';
-
+ 
 interface UseAuditLogResult {
   entries: readonly AuditLogEntry[];
   isLoading: boolean;
@@ -104,3 +104,4 @@ export function useAuditLog(disputeId?: string): UseAuditLogResult {
     stats,
   };
 }
+

@@ -5,7 +5,7 @@ import type {
   TransactionStatus,
   TransactionType 
 } from '../types';
-
+ 
 const MERCHANTS = [
   'Amazon', 'Netflix', 'Spotify', 'Apple', 'Google', 'Uber', 'Airbnb',
   'Walmart', 'Target', 'Best Buy', 'Home Depot', 'Costco', 'Starbucks'
@@ -168,3 +168,4 @@ class TransactionService {
 }
 
 export const transactionService = new TransactionService();
+

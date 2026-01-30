@@ -1,4 +1,4 @@
-import type { Dispute, ConflictInfo, DisputeStatus, DisputePriority } from '../types';
+ import type { Dispute, ConflictInfo, DisputeStatus, DisputePriority } from '../types';
 import { DisputeStatusBadge } from './DisputeStatusBadge';
 
 interface ConflictModalProps {
@@ -106,3 +106,4 @@ export function ConflictModal({
 }
 
 export default ConflictModal;
+

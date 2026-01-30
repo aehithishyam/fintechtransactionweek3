@@ -11,7 +11,7 @@ interface DisputeWizardProps {
   onSubmit: (data: DisputeFormData) => void;
   onSaveDraft: (data: Partial<DisputeFormData>) => void;
   draftStatus: DraftStatus;
-  onCancel: () => void;
+  onCancel: () => void; 
   isSubmitting: boolean;
 }
 
@@ -418,3 +418,4 @@ function getCategoryFromReason(reason: DisputeReason): string {
 }
 
 export default DisputeWizard;
+

@@ -2,7 +2,7 @@ import type { Transaction } from '../types';
 import { MaskedField } from './MaskedField';
 import { formatDateTime } from '../utils';
 import { useAuth } from '../context';
-
+ 
 interface TransactionTableProps {
   transactions: Transaction[];
   selectedId: string | null;
@@ -137,3 +137,4 @@ export function TransactionTable({
     </div>
   );
 }
+

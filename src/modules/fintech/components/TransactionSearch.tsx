@@ -5,7 +5,7 @@ interface TransactionSearchProps {
   onSearch: (params: TransactionSearchParams) => void;
   isLoading: boolean;
 }
-
+ 
 export function TransactionSearch({ onSearch, isLoading }: TransactionSearchProps) {
   const [transactionId, setTransactionId] = useState('');
   const [userId, setUserId] = useState('');
@@ -148,3 +148,4 @@ export function TransactionSearch({ onSearch, isLoading }: TransactionSearchProp
 }
 
 export default TransactionSearch;
+

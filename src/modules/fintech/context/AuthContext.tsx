@@ -4,7 +4,7 @@ import type { User, UserRole, Permission } from '../types';
 import { ROLE_PERMISSIONS, DEMO_USERS } from '../constants';
 
 interface AuthContextType {
-  currentUser: User;
+  currentUser: User; 
   setCurrentUser: (user: User) => void;
   switchRole: (role: UserRole) => void;
   hasPermission: (permission: Permission) => boolean;
@@ -81,3 +81,4 @@ export function useAuth(): AuthContextType {
   }
   return context;
 }
+

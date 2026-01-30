@@ -7,7 +7,7 @@ export const ROLE_PERMISSIONS: Record<UserRole, Permission[]> = {
     'create_dispute',
     'edit_dispute',
     'view_audit_log',
-  ],
+  ], 
   risk_analyst: [
     'view_transactions',
     'view_masked_data',
@@ -197,3 +197,4 @@ export const DISPUTE_REASON_CODES = [
   { code: 'PR03', name: 'Service Not Provided', categoryId: 'product' },
   { code: 'OT01', name: 'Other', categoryId: 'other' },
 ];
+

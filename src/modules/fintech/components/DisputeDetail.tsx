@@ -4,7 +4,7 @@ import { DisputeStatusBadge } from './DisputeStatusBadge';
 import { MaskedField } from './MaskedField';
 import { formatDateTime, formatRelativeTime } from '../utils';
 import { STATUS_TRANSITIONS, DISPUTE_CATEGORIES, DISPUTE_REASON_CODES } from '../constants';
-
+ 
 interface DisputeDetailProps {
   dispute: Dispute;
   onStatusChange: (disputeId: string, newStatus: DisputeStatus) => void;
@@ -201,3 +201,4 @@ function getActionLabel(from: DisputeStatus, to: DisputeStatus): string {
 }
 
 export default DisputeDetail;
+

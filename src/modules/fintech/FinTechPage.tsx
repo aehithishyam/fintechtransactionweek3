@@ -9,7 +9,7 @@ import {
 import {
   ErrorBoundary,
   RoleSelector,
-  TransactionSearch,
+  TransactionSearch, 
   TransactionTable,
   Pagination,
   DisputeWizard,
@@ -384,3 +384,4 @@ export function FinTechPage() {
 }
 
 export default FinTechPage;
+

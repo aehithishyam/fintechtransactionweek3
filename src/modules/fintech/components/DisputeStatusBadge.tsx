@@ -5,7 +5,7 @@ interface DisputeStatusBadgeProps {
   status: DisputeStatus;
   size?: 'sm' | 'md' | 'lg';
   showIcon?: boolean;
-}
+} 
 
 const STATUS_ICONS: Record<DisputeStatus, string> = {
   draft: '📝',
@@ -41,3 +41,4 @@ export function DisputeStatusBadge({
 }
 
 export default DisputeStatusBadge;
+

@@ -7,7 +7,7 @@ interface UseRealtimeUpdatesResult {
   lastEvent: RealtimeEvent | null;
   conflicts: ConflictInfo[];
   connect: () => void;
-  disconnect: () => void;
+  disconnect: () => void; 
   subscribeToDispute: (disputeId: string, callback: (event: RealtimeEvent) => void) => () => void;
   resolveConflict: (disputeId: string, resolution: 'keep_local' | 'use_server') => void;
   clearConflicts: () => void;
@@ -92,3 +92,4 @@ export function useRealtimeUpdates(): UseRealtimeUpdatesResult {
     clearConflicts,
   };
 }
+

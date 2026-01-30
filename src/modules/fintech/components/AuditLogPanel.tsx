@@ -6,7 +6,7 @@ import { formatDateTime, formatRelativeTime } from '../utils';
 
 interface AuditLogPanelProps {
   disputeId?: string;
-  maxEntries?: number;
+  maxEntries?: number; 
 }
 
 export function AuditLogPanel({ disputeId, maxEntries = 50 }: AuditLogPanelProps) {
@@ -183,3 +183,4 @@ function AuditEntry({ entry }: AuditEntryProps) {
 }
 
 export default AuditLogPanel;
+

@@ -2,7 +2,7 @@ import type {
   Dispute, 
   DisputeDraft, 
   DisputeFormData, 
-  DisputeStatus,
+  DisputeStatus, 
   PaginatedResponse
 } from '../types';
 import { transactionService } from './transactionService';
@@ -359,3 +359,4 @@ class DisputeService {
 }
 
 export const disputeService = new DisputeService();
+

@@ -4,7 +4,7 @@ interface RealtimeIndicatorProps {
   eventCount?: number;
   onToggle?: () => void;
 }
-
+ 
 export function RealtimeIndicator({
   isConnected,
   lastUpdate,
@@ -41,3 +41,4 @@ export function RealtimeIndicator({
 }
 
 export default RealtimeIndicator;
+

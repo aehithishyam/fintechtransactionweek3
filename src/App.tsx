@@ -10,7 +10,7 @@ interface NotificationState {
   message: string;
   type: 'success' | 'error' | 'info';
 }
-
+ 
 function App() {
   const [notification, setNotification] = useState<NotificationState | null>(null);
 

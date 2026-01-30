@@ -11,7 +11,7 @@ interface WorkflowResult {
   conflict?: boolean;
 }
 
-interface UseDisputeWorkflowResult {
+interface UseDisputeWorkflowResult { 
   isProcessing: boolean;
   lastError: string | null;
   canTransition: (dispute: Dispute, targetStatus: DisputeStatus) => boolean;
@@ -200,3 +200,4 @@ export function useDisputeWorkflow(): UseDisputeWorkflowResult {
     reopen,
   };
 }
+

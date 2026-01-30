@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+ import { useState, useCallback, useEffect } from 'react';
 import type { 
   Dispute, 
   DisputeStatus, 
@@ -123,3 +123,4 @@ export function useDisputes(): UseDisputesResult {
     getDisputeById,
   };
 }
+

@@ -8,7 +8,7 @@ class RealtimeService {
   private eventQueue: RealtimeEvent[] = [];
   private eventIdCounter = 1;
   private isConnected = false;
-
+ 
   connect(): void {
     if (this.isConnected) return;
     
@@ -99,3 +99,4 @@ class RealtimeService {
 }
 
 export const realtimeService = new RealtimeService();
+

@@ -9,7 +9,7 @@ import {
 import {
   ErrorBoundary,
   RoleSelector,
-  TransactionSearch, 
+  TransactionSearch,
   TransactionTable,
   Pagination,
   DisputeWizard,
@@ -29,7 +29,9 @@ type ViewMode = 'transactions' | 'disputes' | 'audit';
 function FinTechPortalContent() {
   const { currentUser, hasPermission } = useAuth();
   const [viewMode, setViewMode] = useState<ViewMode>('transactions');
-  
+  const [isPaused, setIsPaused] = useState(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+
   // Transaction state
   const {
     transactions,
@@ -77,6 +79,7 @@ function FinTechPortalContent() {
     saveDraft,
     status: draftStatus,
     clearCurrentDraft,
+    resumeDraft,
   } = useDraftDispute();
   // Real-time updates
   const {
@@ -105,6 +108,25 @@ function FinTechPortalContent() {
     }
     return undefined;
   }, [selectedDispute, getDisputeById, refreshDisputes, subscribeToDispute]);
+  useEffect(() => {
+    const handleOnline = () => {
+      setIsOnline(true);
+      setIsPaused(false); // auto resume
+    };
+
+    const handleOffline = () => {
+      setIsOnline(false);
+      setIsPaused(true); // auto pause
+    };
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
 
   const handleTransactionSearch = useCallback((params: TransactionSearchParams) => {
     setSearchParams(params);
@@ -114,16 +136,11 @@ function FinTechPortalContent() {
     (txn: Transaction) => {
       if (txn.status !== 'completed') return;
 
-      const draft = getDraftByTransactionId(txn.id);
-
-      if (!draft) {
-        clearCurrentDraft();
-      }
-
+      clearCurrentDraft();
       setSelectedTransaction(txn);
       setShowWizard(true);
     },
-    [getDraftByTransactionId, clearCurrentDraft]
+    [clearCurrentDraft]
   );
 
   const handleDisputeSelect = useCallback((dispute: Dispute) => {
@@ -203,7 +220,9 @@ function FinTechPortalContent() {
         </div>
         <div className="header-right">
           <RealtimeIndicator
-            isConnected={isConnected}
+            isConnected={!isPaused && isConnected}
+            isOnline={isOnline}
+            onToggle={() => setIsPaused(prev => !prev)}
           />
           <RoleSelector />
         </div>
@@ -260,6 +279,12 @@ function FinTechPortalContent() {
                     selectedId={selectedTransaction?.id || null}
                     onSelect={handleTransactionSelect}
                     onViewDetails={setSelectedTransactionDetails}
+                    getDraftByTransactionId={getDraftByTransactionId}
+                    onResume={(draft, txn) => {
+                      resumeDraft(draft);
+                      setSelectedTransaction(txn);
+                      setShowWizard(true);
+                    }}
                     isLoading={txnLoading}
                   />
                   <Pagination
@@ -384,4 +409,3 @@ export function FinTechPage() {
 }
 
 export default FinTechPage;
-

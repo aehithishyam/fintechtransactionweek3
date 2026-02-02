@@ -1,25 +1,32 @@
 interface RealtimeIndicatorProps {
   isConnected: boolean;
+  isOnline: boolean;
   lastUpdate?: Date | null;
   eventCount?: number;
   onToggle?: () => void;
 }
- 
+
 export function RealtimeIndicator({
   isConnected,
+  isOnline,
   lastUpdate,
   eventCount,
   onToggle,
 }: RealtimeIndicatorProps) {
+  const isPaused = !isOnline || !isConnected;
   return (
-    <div className={`realtime-indicator ${isConnected ? 'connected' : 'disconnected'}`}>
+    <div className={`realtime-indicator ${isPaused ? 'disconnected' : 'connected'}`}>
       <div className="realtime-status">
         <span className={`status-dot ${isConnected ? 'pulse' : ''}`}></span>
         <span className="status-text">
-          {isConnected ? 'Live' : 'Paused'}
+          {!isOnline
+            ? 'Paused'
+            : isConnected
+            ? 'Live'
+            : 'Paused'}
         </span>
       </div>
-      {lastUpdate && (
+      {lastUpdate && isOnline && (
         <span className="last-update">
           Last update: {lastUpdate.toLocaleTimeString()}
         </span>
@@ -27,7 +34,7 @@ export function RealtimeIndicator({
       {eventCount !== undefined && eventCount > 0 && (
         <span className="event-count">{eventCount} events</span>
       )}
-      {onToggle && (
+      {onToggle && isOnline && (
         <button
           className="btn btn-icon realtime-toggle"
           onClick={onToggle}
@@ -41,4 +48,3 @@ export function RealtimeIndicator({
 }
 
 export default RealtimeIndicator;
-
